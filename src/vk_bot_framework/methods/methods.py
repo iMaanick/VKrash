@@ -1,6 +1,7 @@
-from typing import Optional, Dict, Any
+from typing import Optional
 
 from ..client import VKClient
+from ..types import VKResponse
 
 
 class MessagesMethods:
@@ -12,8 +13,8 @@ class MessagesMethods:
             peer_id: int,
             message: str,
             attachment: Optional[str] = None,
-            keyboard: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
+            keyboard: str = None
+    ) -> VKResponse:
         params = {
             "peer_id": peer_id,
             "message": message,
