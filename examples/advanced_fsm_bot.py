@@ -193,12 +193,7 @@ async def main():
     dp.include_router(router)
     dp.include_router(router2)
 
-    print("Bot started...")
     await dp.start_polling()
 
-
 if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        print("\nBot stopped.")
+    asyncio.run(main())

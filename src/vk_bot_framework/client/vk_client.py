@@ -37,3 +37,7 @@ class VKClient:
 
     async def get_long_poll_server(self) -> VKResponse:
         return await self._make_request("groups.getLongPollServer", {"group_id": self.group_id})
+
+    async def close(self):
+        if self._session and not self._session.closed:
+            await self._session.close()
